@@ -1,11 +1,21 @@
 package com.KeepinItSimpleApps;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class Entry {
 
 	private String text;
-	private Timestamp time;
+	private Date time;
+	
+	public Entry(String text, Date time) {
+		this.text = text;
+		this.time = time;
+	}
+	
+	public Entry() {
+		this.text = null;
+		this.time = null;
+	}
 	
 	public String getText() {
 		return text;
@@ -13,10 +23,10 @@ public class Entry {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public Timestamp getTime() {
+	public Date getTime() {
 		return time;
 	}
-	public void setTime(Timestamp time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 	

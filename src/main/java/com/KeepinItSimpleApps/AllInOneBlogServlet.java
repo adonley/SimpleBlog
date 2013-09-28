@@ -23,7 +23,7 @@ public class AllInOneBlogServlet extends HttpServlet {
 	private String userName = "root";
 	private String password = "67bah67";
 	private String dbms = "mysql";
-	private String dbName = "blog";
+	//private String dbName = "blog";
 	private String serverName = "127.0.0.1";
 	private String portNumber = "3306";
 	private Connection conn;
@@ -37,20 +37,35 @@ public class AllInOneBlogServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 
-			List<Entry> entries = new ArrayList<Entry>();
+			getConnection();			
 			
-			getConnection();
+			List<Entry> entries = new ArrayList<Entry>(updateEntryList());
 				
 			closeConnection();
 			
 			request.setAttribute("entries", entries);
 
-			RequestDispatcher requestDispatcher = request
-					.getRequestDispatcher("my.vm");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("my.vm");
 			requestDispatcher.forward(request, response);
+			
 		} catch (Exception ex) {
 			logger.error(ex);
 		}
+	}
+	
+	public List<Entry> updateEntryList() throws SQLException {
+		
+		List<Entry> list = new ArrayList<Entry>();
+		stmt = conn.createStatement();
+		stmt.executeQuery(initDB);
+		stmt.executeQuery("USE blog;");
+		stmt.executeQuery(initTable);
+		ResultSet rs = stmt.executeQuery("SELECT * FROM blog;");
+		while(rs.next()) {
+			list.add(new Entry(rs.getString("entry"),rs.getDate("submission_date")));
+		}
+		return list;
+		
 	}
 	
 	public void getConnection() throws SQLException {
