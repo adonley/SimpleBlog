@@ -12,6 +12,13 @@ public class Entry {
 		this.time = time;
 	}
 	
+	public Entry(String text) {
+		this.text = text;
+		java.util.Date today = new java.util.Date();
+		java.sql.Date sqlToday = new java.sql.Date(today.getTime());
+		this.time = sqlToday;
+	}
+	
 	public Entry() {
 		this.text = null;
 		this.time = null;

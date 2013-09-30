@@ -3,7 +3,7 @@
         <title>Velocity Blog Test</title>
     </head>
     <body>
-    
+    Hello. This actually worked.
     #foreach($entry in $entries)
     	$entry.text <br>
     #end

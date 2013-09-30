@@ -37,11 +37,15 @@ public class AllInOneBlogServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 
-			getConnection();			
+			//getConnection();			
 			
-			List<Entry> entries = new ArrayList<Entry>(updateEntryList());
-				
-			closeConnection();
+			//List<Entry> entries = new ArrayList<Entry>(updateEntryList());
+			List<Entry> entries = new ArrayList<Entry> ();
+			
+			for(int i = 0; i < 10; i++)
+				entries.add(new Entry("Goose" + i));
+			
+			//closeConnection();
 			
 			request.setAttribute("entries", entries);
 
