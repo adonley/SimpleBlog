@@ -1,7 +1,6 @@
 package com.KeepinItSimpleApps;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class PersistanceTest {
@@ -14,7 +13,7 @@ public class PersistanceTest {
 			db.closeConnection();
 		} catch (Exception E) {
 			E.printStackTrace();
-			fail("Fucked DB");
+			fail("BAD DB CONNECTION");
 		}
 	}
 

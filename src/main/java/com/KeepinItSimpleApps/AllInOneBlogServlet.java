@@ -29,20 +29,15 @@ public class AllInOneBlogServlet extends HttpServlet {
 			
 			db = new Persistance();
 			db.getConnection();
-			List<Entry> entries = new ArrayList<Entry>();
 			
-			for(int i = 0; i < 10; i++)
-				entries.add(new Entry("Goose" + i));
+			List<Entry> entries = new ArrayList<Entry>(db.updateEntryList());
 			
 			request.setAttribute("entries", entries);
 
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("my.vm");
 			requestDispatcher.forward(request, response);			
 			
-			//List<Entry> entries = new ArrayList<Entry>(db.updateEntryList());
-			
-			
-			//db.updateEntryList(entries);
+			db.updateEntryList(entries);
 			
 			db.closeConnection();
 			

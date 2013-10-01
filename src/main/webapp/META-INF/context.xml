@@ -1,0 +1,14 @@
+<Context>
+
+	<Resource name="jdbc/blog"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="andrew"
+		password="67bah67"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://127.0.0.1:3306/blog"
+		maxActive="15"
+		maxIdle="3"/>
+
+</Context>
+
