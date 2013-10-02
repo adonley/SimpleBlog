@@ -22,7 +22,7 @@ public class Persistance {
 		stmt = conn.createStatement();
 		//stmt.executeQuery(initDB);
 		//stmt.executeQuery("use blog");
-		stmt.executeUpdate(initTable);
+		//stmt.executeUpdate(initTable);
 		ResultSet rs = stmt.executeQuery("SELECT * FROM entries_tbl");
 		while(rs.next()) {
 			list.add(new Entry(rs.getString("entry"),rs.getDate("submission_date")));

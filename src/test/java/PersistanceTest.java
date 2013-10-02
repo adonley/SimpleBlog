@@ -1,7 +1,8 @@
-package com.KeepinItSimpleApps;
-
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import com.KeepinItSimpleApps.Persistance;
 
 public class PersistanceTest {
 

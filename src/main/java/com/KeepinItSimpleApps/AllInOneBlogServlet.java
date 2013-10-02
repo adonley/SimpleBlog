@@ -34,7 +34,7 @@ public class AllInOneBlogServlet extends HttpServlet {
 			
 			request.setAttribute("entries", entries);
 
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("my.vm");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("blog_layout.vm");
 			requestDispatcher.forward(request, response);			
 			
 			db.updateEntryList(entries);

@@ -7,21 +7,12 @@
 
 	<!-- register servlet -->
 	<servlet>
-		<servlet-name>MyVelocityServlet</servlet-name>
-		<servlet-class>com.KeepinItSimpleApps.MyVelocityServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MyVelocityServlet</servlet-name>
-		<url-pattern>/myvelocity</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
 		<servlet-name>AllInOneBlogServlet</servlet-name>
 		<servlet-class>com.KeepinItSimpleApps.AllInOneBlogServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AllInOneBlogServlet</servlet-name>
-		<url-pattern>/blog</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<!-- mapping all .vm files to velocity servlets -->
@@ -44,7 +35,5 @@
 		<servlet-name>velocity</servlet-name>
 		<url-pattern>*.vm</url-pattern>
 	</servlet-mapping>
-
-
 
 </web-app>

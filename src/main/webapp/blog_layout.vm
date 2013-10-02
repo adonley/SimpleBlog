@@ -1,0 +1,31 @@
+<html>
+     <head>
+        <title>Velocity Blog Test</title>
+        <link href="http://72.52.127.57/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+    
+    <script src="http://code.jquery.com/jquery.js"></script>
+  	<script src="http://72.52.127.57/bootstrap/js/bootstrap.min.js"></script>
+  	
+    <div class="page-header">
+    	<h1 style="margin:0px;">Simple Blog</h1>
+    	<small>Made with Velocity, Maven, Servlets, and Bootstrap</small>
+    </div>
+    #foreach($entry in $entries)
+   		<div class="col-md-8">
+    		<div class="panel panel-default">
+  				<div class="panel-heading">
+    				<h3 class="panel-title" style="text-align:right;"> Date Published: $entry.time </h3>
+  				</div>
+  				<div class="panel-body">
+    				$entry.text
+  				</div>
+			</div>
+		</div>
+    #end
+    
+
+    
+    </body>
+</html>
