@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
 public class AllInOneBlogServlet extends HttpServlet {
 
 	private Logger logger = Logger.getLogger(getClass());
-	private Persistance db;
+	private Persistence db;
 	
 	// All of this should be in a different class, but this is simple enough to stay here for now.
 	
@@ -27,7 +27,7 @@ public class AllInOneBlogServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			
-			db = new Persistance();
+			db = new Persistence();
 			db.getConnection();
 			
 			List<Entry> entries = new ArrayList<Entry>(db.updateEntryList());
@@ -37,7 +37,7 @@ public class AllInOneBlogServlet extends HttpServlet {
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("blog_layout.vm");
 			requestDispatcher.forward(request, response);			
 			
-			db.updateEntryList(entries);
+			//db.updateEntryList(entries);
 			
 			db.closeConnection();
 			

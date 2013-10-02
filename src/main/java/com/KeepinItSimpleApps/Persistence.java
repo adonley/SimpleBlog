@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Persistance {
+public class Persistence {
 	
 	private Connection conn = null;
 	private String initDB = "CREATE DATABASE IF NOT EXISTS blog";

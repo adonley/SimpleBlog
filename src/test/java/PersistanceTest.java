@@ -2,14 +2,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.KeepinItSimpleApps.Persistance;
+import com.KeepinItSimpleApps.Persistence;
 
 public class PersistanceTest {
 
 	@Test
 	public void test() {
 		try {
-			Persistance db = new Persistance();
+			Persistence db = new Persistence();
 			db.getConnection();
 			db.closeConnection();
 		} catch (Exception E) {

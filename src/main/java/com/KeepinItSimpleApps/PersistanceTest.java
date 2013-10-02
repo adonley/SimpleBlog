@@ -9,7 +9,7 @@ public class PersistanceTest {
 	@Test
 	public void test() {
 		try {
-			Persistance db = new Persistance();
+			Persistence db = new Persistence();
 			db.getConnection();
 			db.closeConnection();
 			System.out.print("WAS ABLE TO CONNECT?\n");
