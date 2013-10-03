@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <title>Velocity Blog Test</title>
+        <link href="http://72.52.127.57/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+    
+    <script src="http://code.jquery.com/jquery.js"></script>
+  	<script src="http://72.52.127.57/bootstrap/js/bootstrap.min.js"></script>
+    	
+   	<div class="col-md-8 col-md-offset-2">
+		<FORM ACTION="/BlogTest/putcomment" METHOD="get">
+			<TEXTAREA NAME="comments" COLS=80 ROWS=8></TEXTAREA>
+			<div><input type="submit" value="Add Post"></div>
+		</FORM>
+	</div>
+    
+    </body>
+</html>

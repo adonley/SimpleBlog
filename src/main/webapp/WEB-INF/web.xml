@@ -7,14 +7,41 @@
 
 	<!-- register servlet -->
 	<servlet>
-		<servlet-name>AllInOneBlogServlet</servlet-name>
-		<servlet-class>com.KeepinItSimpleApps.AllInOneBlogServlet</servlet-class>
+		<servlet-name>BlogFrontPage</servlet-name>
+		<servlet-class>com.KeepinItSimpleApps.BlogFrontPage</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>AllInOneBlogServlet</servlet-name>
+		<servlet-name>BlogFrontPage</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.KeepinItSimpleApps.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>com.KeepinItSimpleApps.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>PutCommentServlet</servlet-name>
+		<servlet-class>com.KeepinItSimpleApps.PutCommentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PutCommentServlet</servlet-name>
+		<url-pattern>/putcomment</url-pattern>
+	</servlet-mapping>
+	
 	<!-- mapping all .vm files to velocity servlets -->
 	<servlet>
 		<servlet-name>velocity</servlet-name>
