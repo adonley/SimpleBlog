@@ -3,14 +3,19 @@
      <head>
         <title>Velocity Blog Test</title>
         <link href="http://72.52.127.57/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
+        <script type="text/javascript">
+			function delayer() { window.location = "/BlogTest" }
+		</script>
     </head>
-    <body>
+<body onLoad="setTimeout('delayer()', 1000)">
     
     <script src="http://code.jquery.com/jquery.js"></script>
   	<script src="http://72.52.127.57/bootstrap/js/bootstrap.min.js"></script>
   	
-    <div class="col-md-8 col-md-offset-2">
-		That comment has been added.
+    <div class="col-md-8 col-md-offset-2" style="text-align:center;">
+		That comment has been added.<br>
+		Wait a second.
 	</div>
     
     </body>

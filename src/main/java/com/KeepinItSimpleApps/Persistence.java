@@ -23,9 +23,9 @@ public class Persistence {
 		//stmt.executeQuery(initDB);
 		//stmt.executeQuery("use blog");
 		//stmt.executeUpdate(initTable);
-		ResultSet rs = stmt.executeQuery("select * from entries_tbl ORDER BY entry_id DESC");
+		ResultSet rs = stmt.executeQuery("select * from entries_tbl ORDER BY submission_date DESC");
 		while(rs.next()) {
-			list.add(new Entry(rs.getString("entry"),rs.getDate("submission_date")));
+			list.add(new Entry(rs.getString("entry"),rs.getTimestamp("submission_date")));
 		}
 		
 		return list;

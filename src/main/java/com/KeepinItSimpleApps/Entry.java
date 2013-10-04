@@ -1,13 +1,14 @@
 package com.KeepinItSimpleApps;
 
-import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 
 public class Entry {
 
 	private String text;
-	private Date time;
+	private Timestamp time;
 	
-	public Entry(String text, Date time) {
+	public Entry(String text, Timestamp time) {
 		this.text = text;
 		this.time = time;
 	}
@@ -15,7 +16,8 @@ public class Entry {
 	public Entry(String text) {
 		this.text = text;
 		java.util.Date today = new java.util.Date();
-		java.sql.Date sqlToday = new java.sql.Date(today.getTime());
+		long time = today.getTime();
+		Timestamp sqlToday = new Timestamp(time);
 		this.time = sqlToday;
 	}
 	
@@ -30,10 +32,10 @@ public class Entry {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public Date getTime() {
+	public Timestamp getTime() {
 		return time;
 	}
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 	
